@@ -7,6 +7,7 @@ using Moq;
 using Ninject;
 using PhotosStore.Domain.Abstract;
 using PhotosStore.Domain.Entities;
+using PhotosStore.Domain.Concrete;
 
 namespace PhotosStore.WebUI.Infrastructure
 {
@@ -32,14 +33,7 @@ namespace PhotosStore.WebUI.Infrastructure
 
         private void AddBindings()
         {
-            Mock<IPhotoTechniqueRepository> mock = new Mock<IPhotoTechniqueRepository>();
-            mock.Setup(m => m.PhotoTechniques).Returns(new List<PhotoTechnique>
-    {
-        new PhotoTechnique { Name = "Canon 5d mk II", Price = 1499 },
-        new PhotoTechnique { Name = "Nikon D90", Price=2299 },
-        new PhotoTechnique { Name = "Nikon D810", Price=899.4M }
-    });
-            kernel.Bind<IPhotoTechniqueRepository>().ToConstant(mock.Object);
+            kernel.Bind<IPhotoTechniqueRepository>().To<EFPhotoTechniqueRepository>();
         }
     }
 }

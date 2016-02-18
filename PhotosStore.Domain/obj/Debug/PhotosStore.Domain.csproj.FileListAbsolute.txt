@@ -16,3 +16,8 @@ D:\Programming\ASP NET\PhotosStore\PhotosStore.Domain\bin\Debug\System.Web.WebPa
 D:\Programming\ASP NET\PhotosStore\PhotosStore.Domain\obj\Debug\PhotosStore.Domain.csprojResolveAssemblyReference.cache
 D:\Programming\ASP NET\PhotosStore\PhotosStore.Domain\obj\Debug\PhotosStore.Domain.dll
 D:\Programming\ASP NET\PhotosStore\PhotosStore.Domain\obj\Debug\PhotosStore.Domain.pdb
+D:\Programming\ASP NET\PhotosStore\PhotosStore.Domain\bin\Debug\PhotosStore.Domain.dll.config
+D:\Programming\ASP NET\PhotosStore\PhotosStore.Domain\bin\Debug\EntityFramework.dll
+D:\Programming\ASP NET\PhotosStore\PhotosStore.Domain\bin\Debug\EntityFramework.SqlServer.dll
+D:\Programming\ASP NET\PhotosStore\PhotosStore.Domain\bin\Debug\EntityFramework.xml
+D:\Programming\ASP NET\PhotosStore\PhotosStore.Domain\bin\Debug\EntityFramework.SqlServer.xml

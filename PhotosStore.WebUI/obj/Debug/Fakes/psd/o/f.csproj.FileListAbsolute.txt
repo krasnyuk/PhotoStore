@@ -35,3 +35,13 @@ D:\Programming\ASP NET\PhotosStore\PhotosStore.WebUI\obj\Debug\Fakes\psd\b\ru\Mi
 D:\Programming\ASP NET\PhotosStore\PhotosStore.WebUI\obj\Debug\Fakes\psd\o\f.csprojResolveAssemblyReference.cache
 D:\Programming\ASP NET\PhotosStore\PhotosStore.WebUI\obj\Debug\Fakes\psd\o\PhotosStore.Domain.Fakes.dll
 D:\Programming\ASP NET\PhotosStore\PhotosStore.WebUI\obj\Debug\Fakes\psd\o\PhotosStore.Domain.Fakes.pdb
+D:\Programming\ASP NET\PhotosStore\PhotosStore.WebUI\obj\Debug\Fakes\psd\b\EntityFramework.dll
+D:\Programming\ASP NET\PhotosStore\PhotosStore.WebUI\obj\Debug\Fakes\psd\b\EntityFramework.SqlServer.dll
+D:\Programming\ASP NET\PhotosStore\PhotosStore.WebUI\obj\Debug\Fakes\psd\b\EntityFramework.xml
+D:\Programming\ASP NET\PhotosStore\PhotosStore.WebUI\obj\Debug\Fakes\psd\b\EntityFramework.SqlServer.xml
+D:\Programming\ASP NET\PhotosStore\PhotosStore.WebUI\obj\Debug\Fakes\psd\b\ru\System.Web.Helpers.resources.dll
+D:\Programming\ASP NET\PhotosStore\PhotosStore.WebUI\obj\Debug\Fakes\psd\b\ru\System.Web.Mvc.resources.dll
+D:\Programming\ASP NET\PhotosStore\PhotosStore.WebUI\obj\Debug\Fakes\psd\b\ru\System.Web.Razor.resources.dll
+D:\Programming\ASP NET\PhotosStore\PhotosStore.WebUI\obj\Debug\Fakes\psd\b\ru\System.Web.Webpages.Deployment.resources.dll
+D:\Programming\ASP NET\PhotosStore\PhotosStore.WebUI\obj\Debug\Fakes\psd\b\ru\System.Web.Webpages.resources.dll
+D:\Programming\ASP NET\PhotosStore\PhotosStore.WebUI\obj\Debug\Fakes\psd\b\ru\System.Web.Webpages.Razor.resources.dll
