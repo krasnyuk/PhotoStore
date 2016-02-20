@@ -10,5 +10,6 @@ namespace PhotosStore.WebUI.Models
     {
         public IEnumerable<PhotoTechnique> PhotoTechniques { get; set; }
         public PagingInfo PagingInfo { get; set; }
+        public string CurrentCategory { get; set; }
     }
 }

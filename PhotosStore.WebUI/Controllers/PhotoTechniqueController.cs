@@ -19,11 +19,13 @@ namespace PhotosStore.WebUI.Controllers
             repository = repo;
         }
        
-        public ViewResult List(int page = 1)
+        public ViewResult List(string category, int page = 1)
         {
+
             PhotoTechniqueListViewModel model = new PhotoTechniqueListViewModel
             {
                 PhotoTechniques = repository.PhotoTechniques
+                    .Where(p => category == null || p.Category == category)
                     .OrderBy(game => game.PhotoTechniqueId)
                     .Skip((page - 1) * pageSize)
                     .Take(pageSize),
@@ -31,8 +33,11 @@ namespace PhotosStore.WebUI.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = pageSize,
-                    TotalItems = repository.PhotoTechniques.Count()
-                }
+                    TotalItems = category == null ?
+        repository.PhotoTechniques.Count() :
+        repository.PhotoTechniques.Count(game => game.Category == category)
+                },
+                CurrentCategory = category
             };
             return View(model);
         }

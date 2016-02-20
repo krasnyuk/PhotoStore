@@ -6,18 +6,11 @@
     ViewBag.Title = "Товары";
 }
 
-@foreach (var p in @Model.PhotoTechniques)
+@foreach (var technique in @Model.PhotoTechniques)
 {
-    <div class="well">
-        <h3>
-            <strong>@p.Name</strong>
-            <span class="pull-right label label-primary">@p.Price.ToString("# руб")</span>
-        </h3>
-        <span class="lead">@p.Description</span>
-    </div>
+    @Html.Partial("PhotoTechniqueSummary", technique)
 }
 
 <div class="btn-group pull-right">
-    
-    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new {page = x}))
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x, category = Model.CurrentCategory }))
 </div>
