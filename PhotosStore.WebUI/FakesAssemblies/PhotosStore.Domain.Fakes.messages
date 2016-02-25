@@ -1,1 +1,0 @@
-D:\Programming\ASP NET\PhotosStore\PhotosStore.WebUI\Fakes\PhotosStore.Domain.fakes : warning : Невозможно создать оболочку совместимости для PhotosStore.Domain.Abstract.IPhotoTechniqueRepository: тип является интерфейсом.
