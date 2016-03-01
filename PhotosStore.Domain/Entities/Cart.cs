@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Web.Mvc;
 
 namespace PhotosStore.Domain.Entities
 {
    public class Cart
     {
         private readonly List<CartLine> _lineCollection = new List<CartLine>();
-
+       
         public void AddItem(PhotoTechnique technique, int quantity)
         {
             CartLine line = _lineCollection.FirstOrDefault(g => g.PhotoTechnique.PhotoTechniqueId == technique.PhotoTechniqueId);

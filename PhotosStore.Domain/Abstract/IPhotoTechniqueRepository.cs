@@ -11,5 +11,7 @@ namespace PhotosStore.Domain.Abstract
     {
         IEnumerable<PhotoTechnique> PhotoTechniques { get; }
 
+        void SavePhotoTechnique(PhotoTechnique photoTechnique);
+
     }
 }

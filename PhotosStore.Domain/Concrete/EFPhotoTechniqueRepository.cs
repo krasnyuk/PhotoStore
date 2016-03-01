@@ -16,5 +16,23 @@ namespace PhotosStore.Domain.Concrete
         {
             get { return context.PhotoTechniques; }
         }
+
+       public void SavePhotoTechnique(PhotoTechnique photoTechnique)
+       {
+            if (photoTechnique.PhotoTechniqueId == 0)
+                context.PhotoTechniques.Add(photoTechnique);
+            else
+            {
+                PhotoTechnique dbEntry = context.PhotoTechniques.Find(photoTechnique.PhotoTechniqueId);
+                if (dbEntry != null)
+                {
+                    dbEntry.Name = photoTechnique.Name;
+                    dbEntry.Description = photoTechnique.Description;
+                    dbEntry.Price = photoTechnique.Price;
+                    dbEntry.Category = photoTechnique.Category;
+                }
+            }
+            context.SaveChanges();
+        }
     }
 }

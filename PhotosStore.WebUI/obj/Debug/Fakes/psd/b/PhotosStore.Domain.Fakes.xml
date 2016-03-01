@@ -4,6 +4,18 @@
         <name>PhotosStore.Domain.Fakes</name>
     </assembly>
     <members>
+        <member name="T:PhotosStore.Domain.Abstract.Fakes.StubIOrderProcessor">
+            <summary>Тип заглушки PhotosStore.Domain.Abstract.IOrderProcessor</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Abstract.Fakes.StubIOrderProcessor.#ctor">
+            <summary>Инициализирует новый экземпляр type StubIOrderProcessor</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Abstract.Fakes.StubIOrderProcessor.PhotosStore#Domain#Abstract#IOrderProcessor#ProcessOrder(PhotosStore.Domain.Entities.Cart,PhotosStore.Domain.Entities.ShippingDetails)">
+            <summary>Задает заглушка IOrderProcessor.ProcessOrder(Cart cart, ShippingDetails shippingDetails)</summary>
+        </member>
+        <member name="F:PhotosStore.Domain.Abstract.Fakes.StubIOrderProcessor.ProcessOrderCartShippingDetails">
+            <summary>Задает stub IOrderProcessor.ProcessOrder(Cart cart, ShippingDetails shippingDetails)</summary>
+        </member>
         <member name="T:PhotosStore.Domain.Abstract.Fakes.StubIPhotoTechniqueRepository">
             <summary>Тип заглушки PhotosStore.Domain.Abstract.IPhotoTechniqueRepository</summary>
         </member>
@@ -15,6 +27,12 @@
         </member>
         <member name="F:PhotosStore.Domain.Abstract.Fakes.StubIPhotoTechniqueRepository.PhotoTechniquesGet">
             <summary>Задает stub IPhotoTechniqueRepository.get_PhotoTechniques()</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Abstract.Fakes.StubIPhotoTechniqueRepository.PhotosStore#Domain#Abstract#IPhotoTechniqueRepository#SavePhotoTechnique(PhotosStore.Domain.Entities.PhotoTechnique)">
+            <summary>Задает заглушка IPhotoTechniqueRepository.SavePhotoTechnique(PhotoTechnique photoTechnique)</summary>
+        </member>
+        <member name="F:PhotosStore.Domain.Abstract.Fakes.StubIPhotoTechniqueRepository.SavePhotoTechniquePhotoTechnique">
+            <summary>Задает stub IPhotoTechniqueRepository.SavePhotoTechnique(PhotoTechnique photoTechnique)</summary>
         </member>
         <member name="T:PhotosStore.Domain.Concrete.Fakes.ShimEFDbContext">
             <summary>Тип оболочки совместимости для PhotosStore.Domain.Concrete.EFDbContext</summary>
@@ -73,6 +91,9 @@
         <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEFPhotoTechniqueRepository.AllInstances.PhotoTechniquesGet">
             <summary>Задает оболочка совместимости EFPhotoTechniqueRepository.get_PhotoTechniques()</summary>
         </member>
+        <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEFPhotoTechniqueRepository.AllInstances.SavePhotoTechniquePhotoTechnique">
+            <summary>Задает оболочка совместимости EFPhotoTechniqueRepository.SavePhotoTechnique(PhotoTechnique photoTechnique)</summary>
+        </member>
         <member name="M:PhotosStore.Domain.Concrete.Fakes.ShimEFPhotoTechniqueRepository.BehaveAsCurrent">
             <summary>Назначение поведения &quot;Current&quot; всем методам типа с оболочкой совместимости</summary>
         </member>
@@ -90,6 +111,66 @@
         </member>
         <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEFPhotoTechniqueRepository.PhotoTechniquesGet">
             <summary>Задает оболочка совместимости EFPhotoTechniqueRepository.get_PhotoTechniques()</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEFPhotoTechniqueRepository.SavePhotoTechniquePhotoTechnique">
+            <summary>Задает оболочка совместимости EFPhotoTechniqueRepository.SavePhotoTechnique(PhotoTechnique photoTechnique)</summary>
+        </member>
+        <member name="T:PhotosStore.Domain.Concrete.Fakes.ShimEmailOrderProcessor">
+            <summary>Тип оболочки совместимости для PhotosStore.Domain.Concrete.EmailOrderProcessor</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Concrete.Fakes.ShimEmailOrderProcessor.#ctor">
+            <summary>Инициализация нового экземпляра оболочки совместимости</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Concrete.Fakes.ShimEmailOrderProcessor.#ctor(PhotosStore.Domain.Concrete.EmailOrderProcessor)">
+            <summary>Инициализация новой оболочки совместимости для заданного экземпляра</summary>
+        </member>
+        <member name="T:PhotosStore.Domain.Concrete.Fakes.ShimEmailOrderProcessor.AllInstances">
+            <summary>Определение оболочек совместимости для всех членов экземпляров</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEmailOrderProcessor.AllInstances.ProcessOrderCartShippingDetails">
+            <summary>Задает оболочка совместимости EmailOrderProcessor.ProcessOrder(Cart cart, ShippingDetails shippingInfo)</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Concrete.Fakes.ShimEmailOrderProcessor.BehaveAsCurrent">
+            <summary>Назначение поведения &quot;Current&quot; всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Concrete.Fakes.ShimEmailOrderProcessor.BehaveAsNotImplemented">
+            <summary>Назначение поведения &quot;NotImplemented&quot; всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEmailOrderProcessor.Behavior">
+            <summary>Назначение поведения всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Concrete.Fakes.ShimEmailOrderProcessor.Bind(PhotosStore.Domain.Abstract.IOrderProcessor)">
+            <summary>Привязка членов интерфейса к оболочке совместимости.</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEmailOrderProcessor.ConstructorEmailSettings">
+            <summary>Задает оболочка совместимости EmailOrderProcessor.EmailOrderProcessor(EmailSettings settings)</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEmailOrderProcessor.ProcessOrderCartShippingDetails">
+            <summary>Задает оболочка совместимости EmailOrderProcessor.ProcessOrder(Cart cart, ShippingDetails shippingInfo)</summary>
+        </member>
+        <member name="T:PhotosStore.Domain.Concrete.Fakes.ShimEmailSettings">
+            <summary>Тип оболочки совместимости для PhotosStore.Domain.Concrete.EmailSettings</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Concrete.Fakes.ShimEmailSettings.#ctor">
+            <summary>Инициализация нового экземпляра оболочки совместимости</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Concrete.Fakes.ShimEmailSettings.#ctor(PhotosStore.Domain.Concrete.EmailSettings)">
+            <summary>Инициализация новой оболочки совместимости для заданного экземпляра</summary>
+        </member>
+        <member name="T:PhotosStore.Domain.Concrete.Fakes.ShimEmailSettings.AllInstances">
+            <summary>Определение оболочек совместимости для всех членов экземпляров</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Concrete.Fakes.ShimEmailSettings.BehaveAsCurrent">
+            <summary>Назначение поведения &quot;Current&quot; всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Concrete.Fakes.ShimEmailSettings.BehaveAsNotImplemented">
+            <summary>Назначение поведения &quot;NotImplemented&quot; всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEmailSettings.Behavior">
+            <summary>Назначение поведения всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEmailSettings.Constructor">
+            <summary>Задает оболочка совместимости EmailSettings.EmailSettings()</summary>
         </member>
         <member name="T:PhotosStore.Domain.Concrete.Fakes.StubEFDbContext">
             <summary>Тип заглушки PhotosStore.Domain.Concrete.EFDbContext</summary>
@@ -197,6 +278,42 @@
             <summary>Получает или задает поведение экземпляра.</summary>
         </member>
         <member name="P:PhotosStore.Domain.Concrete.Fakes.StubEFPhotoTechniqueRepository.InstanceObserver">
+            <summary>Получает или задает наблюдатель экземпляра.</summary>
+        </member>
+        <member name="T:PhotosStore.Domain.Concrete.Fakes.StubEmailOrderProcessor">
+            <summary>Тип заглушки PhotosStore.Domain.Concrete.EmailOrderProcessor</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Concrete.Fakes.StubEmailOrderProcessor.#ctor(PhotosStore.Domain.Concrete.EmailSettings)">
+            <summary>Инициализирует новый экземпляр</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Concrete.Fakes.StubEmailOrderProcessor.CallBase">
+            <summary>Получает или задает значение, указывающее, следует ли вызывать базовый метод вместо резервного поведения</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Concrete.Fakes.StubEmailOrderProcessor.InitializeStub">
+            <summary>Инициализирует новый экземпляр type StubEmailOrderProcessor</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Concrete.Fakes.StubEmailOrderProcessor.InstanceBehavior">
+            <summary>Получает или задает поведение экземпляра.</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Concrete.Fakes.StubEmailOrderProcessor.InstanceObserver">
+            <summary>Получает или задает наблюдатель экземпляра.</summary>
+        </member>
+        <member name="T:PhotosStore.Domain.Concrete.Fakes.StubEmailSettings">
+            <summary>Тип заглушки PhotosStore.Domain.Concrete.EmailSettings</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Concrete.Fakes.StubEmailSettings.#ctor">
+            <summary>Инициализирует новый экземпляр</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Concrete.Fakes.StubEmailSettings.CallBase">
+            <summary>Получает или задает значение, указывающее, следует ли вызывать базовый метод вместо резервного поведения</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Concrete.Fakes.StubEmailSettings.InitializeStub">
+            <summary>Инициализирует новый экземпляр type StubEmailSettings</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Concrete.Fakes.StubEmailSettings.InstanceBehavior">
+            <summary>Получает или задает поведение экземпляра.</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Concrete.Fakes.StubEmailSettings.InstanceObserver">
             <summary>Получает или задает наблюдатель экземпляра.</summary>
         </member>
         <member name="T:PhotosStore.Domain.Entities.Fakes.ShimCart">
@@ -385,6 +502,114 @@
         <member name="P:PhotosStore.Domain.Entities.Fakes.ShimPhotoTechnique.PriceSetDecimal">
             <summary>Задает оболочка совместимости PhotoTechnique.set_Price(Decimal value)</summary>
         </member>
+        <member name="T:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails">
+            <summary>Тип оболочки совместимости для PhotosStore.Domain.Entities.ShippingDetails</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.#ctor">
+            <summary>Инициализация нового экземпляра оболочки совместимости</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.#ctor(PhotosStore.Domain.Entities.ShippingDetails)">
+            <summary>Инициализация новой оболочки совместимости для заданного экземпляра</summary>
+        </member>
+        <member name="T:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.AllInstances">
+            <summary>Определение оболочек совместимости для всех членов экземпляров</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.AllInstances.CityGet">
+            <summary>Задает оболочка совместимости ShippingDetails.get_City()</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.AllInstances.CitySetString">
+            <summary>Задает оболочка совместимости ShippingDetails.set_City(String value)</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.AllInstances.CountryGet">
+            <summary>Задает оболочка совместимости ShippingDetails.get_Country()</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.AllInstances.CountrySetString">
+            <summary>Задает оболочка совместимости ShippingDetails.set_Country(String value)</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.AllInstances.GiftWrapGet">
+            <summary>Задает оболочка совместимости ShippingDetails.get_GiftWrap()</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.AllInstances.GiftWrapSetBoolean">
+            <summary>Задает оболочка совместимости ShippingDetails.set_GiftWrap(Boolean value)</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.AllInstances.Line1Get">
+            <summary>Задает оболочка совместимости ShippingDetails.get_Line1()</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.AllInstances.Line1SetString">
+            <summary>Задает оболочка совместимости ShippingDetails.set_Line1(String value)</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.AllInstances.Line2Get">
+            <summary>Задает оболочка совместимости ShippingDetails.get_Line2()</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.AllInstances.Line2SetString">
+            <summary>Задает оболочка совместимости ShippingDetails.set_Line2(String value)</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.AllInstances.Line3Get">
+            <summary>Задает оболочка совместимости ShippingDetails.get_Line3()</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.AllInstances.Line3SetString">
+            <summary>Задает оболочка совместимости ShippingDetails.set_Line3(String value)</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.AllInstances.NameGet">
+            <summary>Задает оболочка совместимости ShippingDetails.get_Name()</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.AllInstances.NameSetString">
+            <summary>Задает оболочка совместимости ShippingDetails.set_Name(String value)</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.BehaveAsCurrent">
+            <summary>Назначение поведения &quot;Current&quot; всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.BehaveAsNotImplemented">
+            <summary>Назначение поведения &quot;NotImplemented&quot; всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.Behavior">
+            <summary>Назначение поведения всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.CityGet">
+            <summary>Задает оболочка совместимости ShippingDetails.get_City()</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.CitySetString">
+            <summary>Задает оболочка совместимости ShippingDetails.set_City(String value)</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.Constructor">
+            <summary>Задает оболочка совместимости ShippingDetails.ShippingDetails()</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.CountryGet">
+            <summary>Задает оболочка совместимости ShippingDetails.get_Country()</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.CountrySetString">
+            <summary>Задает оболочка совместимости ShippingDetails.set_Country(String value)</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.GiftWrapGet">
+            <summary>Задает оболочка совместимости ShippingDetails.get_GiftWrap()</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.GiftWrapSetBoolean">
+            <summary>Задает оболочка совместимости ShippingDetails.set_GiftWrap(Boolean value)</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.Line1Get">
+            <summary>Задает оболочка совместимости ShippingDetails.get_Line1()</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.Line1SetString">
+            <summary>Задает оболочка совместимости ShippingDetails.set_Line1(String value)</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.Line2Get">
+            <summary>Задает оболочка совместимости ShippingDetails.get_Line2()</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.Line2SetString">
+            <summary>Задает оболочка совместимости ShippingDetails.set_Line2(String value)</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.Line3Get">
+            <summary>Задает оболочка совместимости ShippingDetails.get_Line3()</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.Line3SetString">
+            <summary>Задает оболочка совместимости ShippingDetails.set_Line3(String value)</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.NameGet">
+            <summary>Задает оболочка совместимости ShippingDetails.get_Name()</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimShippingDetails.NameSetString">
+            <summary>Задает оболочка совместимости ShippingDetails.set_Name(String value)</summary>
+        </member>
         <member name="T:PhotosStore.Domain.Entities.Fakes.StubCart">
             <summary>Тип заглушки PhotosStore.Domain.Entities.Cart</summary>
         </member>
@@ -437,6 +662,24 @@
             <summary>Получает или задает поведение экземпляра.</summary>
         </member>
         <member name="P:PhotosStore.Domain.Entities.Fakes.StubPhotoTechnique.InstanceObserver">
+            <summary>Получает или задает наблюдатель экземпляра.</summary>
+        </member>
+        <member name="T:PhotosStore.Domain.Entities.Fakes.StubShippingDetails">
+            <summary>Тип заглушки PhotosStore.Domain.Entities.ShippingDetails</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Entities.Fakes.StubShippingDetails.#ctor">
+            <summary>Инициализирует новый экземпляр</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.StubShippingDetails.CallBase">
+            <summary>Получает или задает значение, указывающее, следует ли вызывать базовый метод вместо резервного поведения</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Entities.Fakes.StubShippingDetails.InitializeStub">
+            <summary>Инициализирует новый экземпляр type StubShippingDetails</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.StubShippingDetails.InstanceBehavior">
+            <summary>Получает или задает поведение экземпляра.</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.StubShippingDetails.InstanceObserver">
             <summary>Получает или задает наблюдатель экземпляра.</summary>
         </member>
     </members>
