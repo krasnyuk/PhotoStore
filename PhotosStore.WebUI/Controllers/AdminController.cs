@@ -8,6 +8,7 @@ using PhotosStore.Domain.Entities;
 
 namespace PhotosStore.WebUI.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         IPhotoTechniqueRepository repository;
@@ -28,7 +29,7 @@ namespace PhotosStore.WebUI.Controllers
             if (ModelState.IsValid)
             {
                 repository.SavePhotoTechnique(photoTechnique);
-                TempData["message"] = string.Format("Изменения в игре \"{0}\" были сохранены", photoTechnique.Name);
+                TempData["message"] = $"Изменения в товаре \"{photoTechnique.Name}\" были сохранены";
                 return RedirectToAction("Index");
             }
             else
@@ -37,6 +38,23 @@ namespace PhotosStore.WebUI.Controllers
                 return View(photoTechnique);
             }
         }
+
+        public ViewResult Create()
+        {
+            return View("Edit", new PhotoTechnique());
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int photoTechniqueId)
+        {
+            PhotoTechnique deletePhotoTechnique = repository.DeletePhotoTechnique(photoTechniqueId);
+            if (deletePhotoTechnique != null)
+            {
+                TempData["message"] = $"Товар \"{deletePhotoTechnique.Name}\" был удалён";
+            }
+            return RedirectToAction("Index");
+        }
+
         public ViewResult Index()
         {
             return View(repository.PhotoTechniques);

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PhotosStore.Domain.Abstract;
+using PhotosStore.Domain.Concrete;
 using PhotosStore.Domain.Entities;
 using PhotosStore.WebUI.Models;
 
@@ -26,7 +27,7 @@ namespace PhotosStore.WebUI.Controllers
         [HttpPost]
         public ViewResult Checkout(Cart cart, ShippingDetails shippingDetails)
         {
-            if (cart.Lines.Count() == 0)
+            if (!cart.Lines.Any())
             {
                 ModelState.AddModelError("", "Извините, ваша корзина пуста!");
             }
@@ -34,6 +35,7 @@ namespace PhotosStore.WebUI.Controllers
             if (ModelState.IsValid)
             {
                 orderProcessor.ProcessOrder(cart, shippingDetails);
+                //orderProcessor.SendEmail("krasnyuk.photo@gmail.com","Заказ","Some text");
                 cart.Clear();
                 return View("Completed");
             }

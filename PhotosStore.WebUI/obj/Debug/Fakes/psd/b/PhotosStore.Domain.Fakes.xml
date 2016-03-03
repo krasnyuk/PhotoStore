@@ -22,11 +22,17 @@
         <member name="M:PhotosStore.Domain.Abstract.Fakes.StubIPhotoTechniqueRepository.#ctor">
             <summary>Инициализирует новый экземпляр type StubIPhotoTechniqueRepository</summary>
         </member>
+        <member name="F:PhotosStore.Domain.Abstract.Fakes.StubIPhotoTechniqueRepository.DeletePhotoTechniqueInt32">
+            <summary>Задает stub IPhotoTechniqueRepository.DeletePhotoTechnique(Int32 photoTechniqueId)</summary>
+        </member>
         <member name="P:PhotosStore.Domain.Abstract.Fakes.StubIPhotoTechniqueRepository.PhotosStore#Domain#Abstract#IPhotoTechniqueRepository#PhotoTechniques">
             <summary>Задает stub IPhotoTechniqueRepository.get_PhotoTechniques()</summary>
         </member>
         <member name="F:PhotosStore.Domain.Abstract.Fakes.StubIPhotoTechniqueRepository.PhotoTechniquesGet">
             <summary>Задает stub IPhotoTechniqueRepository.get_PhotoTechniques()</summary>
+        </member>
+        <member name="M:PhotosStore.Domain.Abstract.Fakes.StubIPhotoTechniqueRepository.PhotosStore#Domain#Abstract#IPhotoTechniqueRepository#DeletePhotoTechnique(System.Int32)">
+            <summary>Задает заглушка IPhotoTechniqueRepository.DeletePhotoTechnique(Int32 photoTechniqueId)</summary>
         </member>
         <member name="M:PhotosStore.Domain.Abstract.Fakes.StubIPhotoTechniqueRepository.PhotosStore#Domain#Abstract#IPhotoTechniqueRepository#SavePhotoTechnique(PhotosStore.Domain.Entities.PhotoTechnique)">
             <summary>Задает заглушка IPhotoTechniqueRepository.SavePhotoTechnique(PhotoTechnique photoTechnique)</summary>
@@ -88,6 +94,9 @@
         <member name="T:PhotosStore.Domain.Concrete.Fakes.ShimEFPhotoTechniqueRepository.AllInstances">
             <summary>Определение оболочек совместимости для всех членов экземпляров</summary>
         </member>
+        <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEFPhotoTechniqueRepository.AllInstances.DeletePhotoTechniqueInt32">
+            <summary>Задает оболочка совместимости EFPhotoTechniqueRepository.DeletePhotoTechnique(Int32 photoTechniqueId)</summary>
+        </member>
         <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEFPhotoTechniqueRepository.AllInstances.PhotoTechniquesGet">
             <summary>Задает оболочка совместимости EFPhotoTechniqueRepository.get_PhotoTechniques()</summary>
         </member>
@@ -108,6 +117,9 @@
         </member>
         <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEFPhotoTechniqueRepository.Constructor">
             <summary>Задает оболочка совместимости EFPhotoTechniqueRepository.EFPhotoTechniqueRepository()</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEFPhotoTechniqueRepository.DeletePhotoTechniqueInt32">
+            <summary>Задает оболочка совместимости EFPhotoTechniqueRepository.DeletePhotoTechnique(Int32 photoTechniqueId)</summary>
         </member>
         <member name="P:PhotosStore.Domain.Concrete.Fakes.ShimEFPhotoTechniqueRepository.PhotoTechniquesGet">
             <summary>Задает оболочка совместимости EFPhotoTechniqueRepository.get_PhotoTechniques()</summary>

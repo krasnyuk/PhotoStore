@@ -21,30 +21,30 @@ namespace PhotosStore.Domain.Concrete
 
     public class EmailOrderProcessor : IOrderProcessor
     {
-        private EmailSettings emailSettings;
+        private EmailSettings _emailSettings;
 
         public EmailOrderProcessor(EmailSettings settings)
         {
-            emailSettings = settings;
+            _emailSettings = settings;
         }
-
+       
         public void ProcessOrder(Cart cart, ShippingDetails shippingInfo)
         {
             using (var smtpClient = new SmtpClient())
             {
-                smtpClient.EnableSsl = emailSettings.UseSsl;
-                smtpClient.Host = emailSettings.ServerName;
-                smtpClient.Port = emailSettings.ServerPort;
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpClient.EnableSsl = true;
+                smtpClient.Host = _emailSettings.ServerName;
+                smtpClient.Port = _emailSettings.ServerPort;
                 smtpClient.UseDefaultCredentials = false;
-                smtpClient.Credentials = new NetworkCredential(emailSettings.Username, emailSettings.Password);
-
-                if (emailSettings.WriteAsFile)
+                smtpClient.Credentials = new NetworkCredential(_emailSettings.Username,_emailSettings.Password);
+                MailMessage msg = new MailMessage
                 {
-                    smtpClient.DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory;
-                    smtpClient.PickupDirectoryLocation = emailSettings.FileLocation;
-                    smtpClient.EnableSsl = false;
-                }
-
+                    From = new MailAddress(_emailSettings.MailFromAddress)
+                };
+                msg.To.Add(new MailAddress(_emailSettings.MailToAddress));
+                msg.Subject = "Заказ";
+                
                 StringBuilder body = new StringBuilder()
                     .AppendLine("Новый заказ обработан")
                     .AppendLine("---")
@@ -52,7 +52,7 @@ namespace PhotosStore.Domain.Concrete
 
                 foreach (var line in cart.Lines)
                 {
-                    var subtotal = line.PhotoTechnique.Price*line.Quantity;
+                    var subtotal = line.PhotoTechnique.Price * line.Quantity;
                     body.AppendFormat("{0} x {1} (итого: {2:c}",
                         line.Quantity, line.PhotoTechnique.Name, subtotal);
                 }
@@ -69,19 +69,9 @@ namespace PhotosStore.Domain.Concrete
                     .AppendLine("---")
                     .AppendFormat("Подарочная упаковка: {0}",
                         shippingInfo.GiftWrap ? "Да" : "Нет");
-
-                MailMessage mailMessage = new MailMessage(
-                    emailSettings.MailFromAddress, // От кого
-                    emailSettings.MailToAddress, // Кому
-                    "Новый заказ отправлен!", // Тема
-                    body.ToString()); // Тело письма
-
-                if (emailSettings.WriteAsFile)
-                {
-                    mailMessage.BodyEncoding = Encoding.UTF8;
-                }
-
-                smtpClient.Send(mailMessage);
+                msg.Body = body.ToString();
+                smtpClient.Send(msg);
+                
             }
         }
     }

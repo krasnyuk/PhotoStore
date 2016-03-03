@@ -13,5 +13,7 @@ namespace PhotosStore.Domain.Abstract
 
         void SavePhotoTechnique(PhotoTechnique photoTechnique);
 
+        PhotoTechnique DeletePhotoTechnique(int photoTechniqueId);
+
     }
 }

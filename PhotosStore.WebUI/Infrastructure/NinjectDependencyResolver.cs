@@ -9,6 +9,8 @@ using Ninject;
 using PhotosStore.Domain.Abstract;
 using PhotosStore.Domain.Entities;
 using PhotosStore.Domain.Concrete;
+using PhotosStore.WebUI.Infrastructure.Abstract;
+using PhotosStore.WebUI.Infrastructure.Concrete;
 
 namespace PhotosStore.WebUI.Infrastructure
 {
@@ -44,6 +46,7 @@ namespace PhotosStore.WebUI.Infrastructure
 
             kernel.Bind<IOrderProcessor>().To<EmailOrderProcessor>()
                 .WithConstructorArgument("settings", emailSettings);
+            kernel.Bind<IAuthProvider>().To<FormAuthProvider>();
         }
     }
 }

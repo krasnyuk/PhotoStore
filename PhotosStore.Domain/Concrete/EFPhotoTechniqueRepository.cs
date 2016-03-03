@@ -10,20 +10,20 @@ namespace PhotosStore.Domain.Concrete
 {
    public class EFPhotoTechniqueRepository : IPhotoTechniqueRepository
     {
-        EFDbContext context = new EFDbContext();
+        EFDbContext _context = new EFDbContext();
 
         public IEnumerable<PhotoTechnique> PhotoTechniques
         {
-            get { return context.PhotoTechniques; }
+            get { return _context.PhotoTechniques; }
         }
 
        public void SavePhotoTechnique(PhotoTechnique photoTechnique)
        {
             if (photoTechnique.PhotoTechniqueId == 0)
-                context.PhotoTechniques.Add(photoTechnique);
+                _context.PhotoTechniques.Add(photoTechnique);
             else
             {
-                PhotoTechnique dbEntry = context.PhotoTechniques.Find(photoTechnique.PhotoTechniqueId);
+                PhotoTechnique dbEntry = _context.PhotoTechniques.Find(photoTechnique.PhotoTechniqueId);
                 if (dbEntry != null)
                 {
                     dbEntry.Name = photoTechnique.Name;
@@ -32,7 +32,18 @@ namespace PhotosStore.Domain.Concrete
                     dbEntry.Category = photoTechnique.Category;
                 }
             }
-            context.SaveChanges();
+            _context.SaveChanges();
+        }
+
+       public PhotoTechnique DeletePhotoTechnique(int photoTechniqueId)
+       {
+            PhotoTechnique dbEntry = _context.PhotoTechniques.Find(photoTechniqueId);
+            if (dbEntry != null)
+            {
+                _context.PhotoTechniques.Remove(dbEntry);
+                _context.SaveChanges();
+            }
+            return dbEntry;
         }
     }
 }
