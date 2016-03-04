@@ -24,10 +24,16 @@ namespace PhotosStore.WebUI.Controllers
             return View(game);
         }
         [HttpPost]
-        public ActionResult Edit(PhotoTechnique photoTechnique)
+        public ActionResult Edit(PhotoTechnique photoTechnique, HttpPostedFileBase image = null)
         {
             if (ModelState.IsValid)
             {
+                if (image != null)
+                {
+                    photoTechnique.ImageMimeType = image.ContentType;
+                    photoTechnique.ImageData = new byte[image.ContentLength];
+                    image.InputStream.Read(photoTechnique.ImageData, 0, image.ContentLength);
+                }
                 repository.SavePhotoTechnique(photoTechnique);
                 TempData["message"] = $"Изменения в товаре \"{photoTechnique.Name}\" были сохранены";
                 return RedirectToAction("Index");

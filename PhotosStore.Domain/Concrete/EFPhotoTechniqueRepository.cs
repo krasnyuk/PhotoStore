@@ -30,6 +30,8 @@ namespace PhotosStore.Domain.Concrete
                     dbEntry.Description = photoTechnique.Description;
                     dbEntry.Price = photoTechnique.Price;
                     dbEntry.Category = photoTechnique.Category;
+                    dbEntry.ImageData = photoTechnique.ImageData;
+                    dbEntry.ImageMimeType = photoTechnique.ImageMimeType;
                 }
             }
             _context.SaveChanges();

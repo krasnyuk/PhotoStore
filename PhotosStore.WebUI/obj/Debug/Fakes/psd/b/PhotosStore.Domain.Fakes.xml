@@ -454,6 +454,18 @@
         <member name="P:PhotosStore.Domain.Entities.Fakes.ShimPhotoTechnique.AllInstances.DescriptionSetString">
             <summary>Задает оболочка совместимости PhotoTechnique.set_Description(String value)</summary>
         </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimPhotoTechnique.AllInstances.ImageDataGet">
+            <summary>Задает оболочка совместимости PhotoTechnique.get_ImageData()</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimPhotoTechnique.AllInstances.ImageDataSetByteArray">
+            <summary>Задает оболочка совместимости PhotoTechnique.set_ImageData(Byte[] value)</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimPhotoTechnique.AllInstances.ImageMimeTypeGet">
+            <summary>Задает оболочка совместимости PhotoTechnique.get_ImageMimeType()</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimPhotoTechnique.AllInstances.ImageMimeTypeSetString">
+            <summary>Задает оболочка совместимости PhotoTechnique.set_ImageMimeType(String value)</summary>
+        </member>
         <member name="P:PhotosStore.Domain.Entities.Fakes.ShimPhotoTechnique.AllInstances.NameGet">
             <summary>Задает оболочка совместимости PhotoTechnique.get_Name()</summary>
         </member>
@@ -495,6 +507,18 @@
         </member>
         <member name="P:PhotosStore.Domain.Entities.Fakes.ShimPhotoTechnique.DescriptionSetString">
             <summary>Задает оболочка совместимости PhotoTechnique.set_Description(String value)</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimPhotoTechnique.ImageDataGet">
+            <summary>Задает оболочка совместимости PhotoTechnique.get_ImageData()</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimPhotoTechnique.ImageDataSetByteArray">
+            <summary>Задает оболочка совместимости PhotoTechnique.set_ImageData(Byte[] value)</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimPhotoTechnique.ImageMimeTypeGet">
+            <summary>Задает оболочка совместимости PhotoTechnique.get_ImageMimeType()</summary>
+        </member>
+        <member name="P:PhotosStore.Domain.Entities.Fakes.ShimPhotoTechnique.ImageMimeTypeSetString">
+            <summary>Задает оболочка совместимости PhotoTechnique.set_ImageMimeType(String value)</summary>
         </member>
         <member name="P:PhotosStore.Domain.Entities.Fakes.ShimPhotoTechnique.NameGet">
             <summary>Задает оболочка совместимости PhotoTechnique.get_Name()</summary>

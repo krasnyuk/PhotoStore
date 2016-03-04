@@ -41,5 +41,19 @@ namespace PhotosStore.WebUI.Controllers
             };
             return View(model);
         }
+        public FileContentResult GetImage(int photoTechniqueId)
+        {
+            PhotoTechnique game = repository.PhotoTechniques
+                .FirstOrDefault(g => g.PhotoTechniqueId == photoTechniqueId);
+
+            if (game != null)
+            {
+                return File(game.ImageData, game.ImageMimeType);
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
