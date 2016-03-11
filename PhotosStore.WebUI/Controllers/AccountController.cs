@@ -20,7 +20,11 @@ namespace PhotosStore.WebUI.Controllers
         {
             return View();
         }
+<<<<<<< HEAD
         //для проверки достоверности при авторизации 
+=======
+
+>>>>>>> 0d93b04c96dc8b48161553e5f14311a69b129dc6
         [HttpPost]
         public ActionResult Login(LoginViewModel model, string returnUrl)
         {
@@ -29,8 +33,12 @@ namespace PhotosStore.WebUI.Controllers
             {
                 if (authProvider.Authenticate(model.UserName, model.Password))
                 {
+<<<<<<< HEAD
                     //если авториз. прошла редирект в админку
                     return Redirect(returnUrl ?? Url.Action("Index", "Admin")); 
+=======
+                    return Redirect(returnUrl ?? Url.Action("Index", "Admin"));
+>>>>>>> 0d93b04c96dc8b48161553e5f14311a69b129dc6
                 }
                 else
                 {

@@ -28,7 +28,11 @@ namespace PhotosStore.Domain.Entities
 
         [Display(Name = "Цена")]
         [Required]
+<<<<<<< HEAD
         [Range(0.01, double.MaxValue,
+=======
+        [Range(0.01, double.MaxValue, 
+>>>>>>> 0d93b04c96dc8b48161553e5f14311a69b129dc6
             ErrorMessage = "Пожалуйста, введите положительное значение для цены")]
         public decimal Price { get; set; }
         public byte[] ImageData { get; set; }

@@ -7,7 +7,10 @@ using PhotosStore.Domain.Abstract;
 
 namespace PhotosStore.WebUI.Controllers
 {
+<<<<<<< HEAD
     //контроллер навигации 
+=======
+>>>>>>> 0d93b04c96dc8b48161553e5f14311a69b129dc6
     public class NavController : Controller
     {
         private IPhotoTechniqueRepository repository;
@@ -16,6 +19,7 @@ namespace PhotosStore.WebUI.Controllers
         {
             repository = repo;
         }
+<<<<<<< HEAD
         //меню категорий
         public PartialViewResult Menu(string category = null)
         {
@@ -25,6 +29,16 @@ namespace PhotosStore.WebUI.Controllers
                 .Select(technique => technique.Category)    //по категории
                 .Distinct()
                 .OrderBy(x => x);                           //отсортировать
+=======
+
+        public PartialViewResult Menu(string category = null)
+        {
+            ViewBag.SelectedCategory = category;
+            IEnumerable<string> categories = repository.PhotoTechniques
+                .Select(technique => technique.Category)
+                .Distinct()
+                .OrderBy(x => x);
+>>>>>>> 0d93b04c96dc8b48161553e5f14311a69b129dc6
             return PartialView(categories);
         }
     }

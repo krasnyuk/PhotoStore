@@ -10,8 +10,13 @@ namespace PhotosStore.WebUI.HtmlHelpers
 {
     public static class PagingHelpers
     {
+<<<<<<< HEAD
         //создание кнопок навигации
         public static MvcHtmlString PageLinks(this HtmlHelper html,PagingInfo pagingInfo,Func<int, string> pageUrl)
+=======
+        public static MvcHtmlString PageLinks(this HtmlHelper html,PagingInfo pagingInfo,
+                                              Func<int, string> pageUrl)
+>>>>>>> 0d93b04c96dc8b48161553e5f14311a69b129dc6
         {
             StringBuilder result = new StringBuilder();
             for (int i = 1; i <= pagingInfo.TotalPages; i++)

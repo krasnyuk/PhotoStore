@@ -33,17 +33,30 @@ namespace PhotosStore.WebUI.Infrastructure
         {
             return kernel.GetAll(serviceType);
         }
+<<<<<<< HEAD
         //создание привязок DI
+=======
+
+>>>>>>> 0d93b04c96dc8b48161553e5f14311a69b129dc6
         private void AddBindings()
         {
             kernel.Bind<IPhotoTechniqueRepository>().To<EFPhotoTechniqueRepository>();
 
             EmailSettings emailSettings = new EmailSettings
             {
+<<<<<<< HEAD
                 WriteAsFile = bool.Parse(ConfigurationManager.AppSettings["Email.WriteAsFile"] ?? "false")
             };
 
             kernel.Bind<IOrderProcessor>().To<EmailOrderProcessor>().WithConstructorArgument("settings", emailSettings);
+=======
+                WriteAsFile = bool.Parse(ConfigurationManager
+                .AppSettings["Email.WriteAsFile"] ?? "false")
+            };
+
+            kernel.Bind<IOrderProcessor>().To<EmailOrderProcessor>()
+                .WithConstructorArgument("settings", emailSettings);
+>>>>>>> 0d93b04c96dc8b48161553e5f14311a69b129dc6
             kernel.Bind<IAuthProvider>().To<FormAuthProvider>();
         }
     }
