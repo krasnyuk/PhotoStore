@@ -1,0 +1,9 @@
+﻿.wrap { 
+    width: 100%; /* Ширина */
+    background: #f8f8ff;
+    margin: 10px 10px 10px 10px;
+    padding: 20px;
+    border: 1px solid #000;
+       float: left;
+
+   }

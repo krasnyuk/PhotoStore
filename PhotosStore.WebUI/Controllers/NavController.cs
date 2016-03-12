@@ -25,5 +25,10 @@ namespace PhotosStore.WebUI.Controllers
                 .OrderBy(x => x);
             return PartialView(categories);
         }
+
+        public ViewResult Main()
+        {
+            return View();
+        }
     }
 }
