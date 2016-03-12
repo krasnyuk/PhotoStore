@@ -21,15 +21,26 @@ namespace PhotosStore.WebUI.Controllers
        
         public ViewResult List(string category, int page = 1)
         {
+<<<<<<< HEAD
+            // формирование модели фототехники
+=======
 
+>>>>>>> 0d93b04c96dc8b48161553e5f14311a69b129dc6
             PhotoTechniqueListViewModel model = new PhotoTechniqueListViewModel
             {
                 PhotoTechniques = repository.PhotoTechniques
                     .Where(p => category == null || p.Category == category)
+<<<<<<< HEAD
+                    .OrderBy(t => t.PhotoTechniqueId)
+                    .Skip((page - 1) * pageSize)
+                    .Take(pageSize),
+                PagingInfo = new PagingInfo //информация для навигации
+=======
                     .OrderBy(game => game.PhotoTechniqueId)
                     .Skip((page - 1) * pageSize)
                     .Take(pageSize),
                 PagingInfo = new PagingInfo
+>>>>>>> 0d93b04c96dc8b48161553e5f14311a69b129dc6
                 {
                     CurrentPage = page,
                     ItemsPerPage = pageSize,
@@ -41,6 +52,17 @@ namespace PhotosStore.WebUI.Controllers
             };
             return View(model);
         }
+<<<<<<< HEAD
+        //получение изображения из базы
+        public FileContentResult GetImage(int photoTechniqueId)
+        {
+            PhotoTechnique technique = repository.PhotoTechniques
+                .FirstOrDefault(g => g.PhotoTechniqueId == photoTechniqueId);
+            
+            if (technique != null)
+            {
+                return File(technique.ImageData, technique.ImageMimeType);
+=======
         public FileContentResult GetImage(int photoTechniqueId)
         {
             PhotoTechnique game = repository.PhotoTechniques
@@ -49,6 +71,7 @@ namespace PhotosStore.WebUI.Controllers
             if (game != null)
             {
                 return File(game.ImageData, game.ImageMimeType);
+>>>>>>> 0d93b04c96dc8b48161553e5f14311a69b129dc6
             }
             else
             {

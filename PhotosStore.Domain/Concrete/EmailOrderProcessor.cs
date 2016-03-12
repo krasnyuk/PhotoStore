@@ -6,6 +6,22 @@ using PhotosStore.Domain.Entities;
 
 namespace PhotosStore.Domain.Concrete
 {
+<<<<<<< HEAD
+    //класс с дефолтными значениями настроек почты
+    public class EmailSettings
+    {
+        public string MailToAddress = "krasnyuk-photo@mail.ru"; //куда придёт по дефолту
+        public string MailFromAddress = "krasnyuk.photo@gmail.com"; //кто отправитель
+        public bool UseSsl = true;
+        public string Username = "krasnyuk.photo@gmail.com"; // логин отправителя
+        public string Password = "bafnet123";
+        public string ServerName = "smtp.gmail.com";
+        public int ServerPort = 587;
+        public bool WriteAsFile = true; //сохранять как файл на жёстком диске
+        public string FileLocation = @"D:\Programming\photo_store_emails"; //путь к папке
+    }
+    //реализация обработчика заказов
+=======
     public class EmailSettings
     {
         public string MailToAddress = "krasnyuk-photo@mail.ru";
@@ -19,6 +35,7 @@ namespace PhotosStore.Domain.Concrete
         public string FileLocation = @"D:\Programming\photo_store_emails";
     }
 
+>>>>>>> 0d93b04c96dc8b48161553e5f14311a69b129dc6
     public class EmailOrderProcessor : IOrderProcessor
     {
         private EmailSettings _emailSettings;
@@ -40,11 +57,19 @@ namespace PhotosStore.Domain.Concrete
                 smtpClient.Credentials = new NetworkCredential(_emailSettings.Username,_emailSettings.Password);
                 MailMessage msg = new MailMessage
                 {
+<<<<<<< HEAD
+                    From = new MailAddress(_emailSettings.MailFromAddress) //от кого
+                };
+                msg.To.Add(new MailAddress(shippingInfo.Email)); //кому
+                msg.Subject = "Заказ"; //тема письма
+                //формирование тела письма
+=======
                     From = new MailAddress(_emailSettings.MailFromAddress)
                 };
                 msg.To.Add(new MailAddress(_emailSettings.MailToAddress));
                 msg.Subject = "Заказ";
                 
+>>>>>>> 0d93b04c96dc8b48161553e5f14311a69b129dc6
                 StringBuilder body = new StringBuilder()
                     .AppendLine("Новый заказ обработан")
                     .AppendLine("---")
@@ -61,7 +86,11 @@ namespace PhotosStore.Domain.Concrete
                     .AppendLine("---")
                     .AppendLine("Доставка:")
                     .AppendLine(shippingInfo.Name)
+<<<<<<< HEAD
+                    .AppendLine(shippingInfo.Email)
+=======
                     .AppendLine(shippingInfo.Line1)
+>>>>>>> 0d93b04c96dc8b48161553e5f14311a69b129dc6
                     .AppendLine(shippingInfo.Line2 ?? "")
                     .AppendLine(shippingInfo.Line3 ?? "")
                     .AppendLine(shippingInfo.City)

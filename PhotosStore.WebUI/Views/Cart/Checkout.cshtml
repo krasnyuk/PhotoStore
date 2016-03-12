@@ -1,7 +1,11 @@
 ﻿@model PhotosStore.Domain.Entities.ShippingDetails
 
 @{
+<<<<<<< HEAD
+    ViewBag.Title = "PhotoStore: форма заказа";
+=======
     ViewBag.Title = "GameStore: форма заказа";
+>>>>>>> 0d93b04c96dc8b48161553e5f14311a69b129dc6
 }
 
 <h2>Оформить заказ сейчас</h2>
@@ -19,8 +23,13 @@
 
     <h3>Адрес доставки</h3>
     <div class="form-group">
+<<<<<<< HEAD
+        <label>Электронная почта:</label>
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+=======
         <label>Первый адрес:</label>
         @Html.TextBoxFor(x => x.Line1, new { @class = "form-control" })
+>>>>>>> 0d93b04c96dc8b48161553e5f14311a69b129dc6
     </div>
     <div class="form-group">
         <label>Второй адрес:</label>
